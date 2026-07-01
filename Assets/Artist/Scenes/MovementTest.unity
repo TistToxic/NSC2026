@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 449290635}
   - component: {fileID: 449290637}
   - component: {fileID: 449290636}
+  - component: {fileID: 449290638}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -387,11 +388,12 @@ Transform:
   m_GameObject: {fileID: 449290632}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0011605968, y: -0.99999934, z: -0.0001483047, w: -0.00000017212207}
-  m_LocalPosition: {x: 12.81, y: 2.04, z: 18.04}
-  m_LocalScale: {x: 0.47319892, y: 0.42711315, z: 2}
+  m_LocalPosition: {x: 25.05, y: 2.04, z: -6.4799995}
+  m_LocalScale: {x: 0.47319898, y: 0.42711315, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1585209809}
+  m_Children:
+  - {fileID: 1585209809}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.017, y: -180, z: -0.133}
 --- !u!212 &449290634
 SpriteRenderer:
@@ -519,6 +521,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &449290638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449290632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6487ffadc98ce2a45ad88bb9dc9e2652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  player: {fileID: 1585209809}
 --- !u!1 &481687070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,13 +1559,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585209808}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.24, y: -0, z: -24.52}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.0011605968, y: 0.99999934, z: 0.0001483047, w: -0.00000017212207}
+  m_LocalPosition: {x: 27.081024, y: -4.7191496, z: 9.019697}
+  m_LocalScale: {x: 2.113277, y: 2.3412976, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 449290633}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 449290633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651626966
 GameObject:
@@ -1817,7 +1831,7 @@ SceneRoots:
   - {fileID: 1217134435}
   - {fileID: 1461212201}
   - {fileID: 870685992}
-  - {fileID: 1585209809}
+  - {fileID: 449290633}
   - {fileID: 267270608}
   - {fileID: 1392028821}
   - {fileID: 1359848991}
