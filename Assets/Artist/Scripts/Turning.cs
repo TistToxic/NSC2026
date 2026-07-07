@@ -13,11 +13,11 @@ public class Turning : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float playerProj = Vector3.Dot(player.position, Vector3.right);
         float mouseProj = Vector3.Dot(mousePos, Vector3.right);
-        Debug.Log(playerProj);
-        Debug.Log(mouseProj);
+        //Debug.Log(playerProj);
+        //Debug.Log(mouseProj);
         if (mouseProj < playerProj)
         {
-            Debug.Log("Mouse behind player");
+            //Debug.Log("Mouse behind player");
         }
     }
 }
