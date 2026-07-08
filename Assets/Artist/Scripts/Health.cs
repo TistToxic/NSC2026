@@ -3,15 +3,15 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float hp = 100f;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public void Damage(float damage)
+    {
+        hp -= damage;
+        Debug.Log(hp);
+    }
     void Update()
     {
-        if (hp < 100f)
+        if (hp <= 0f)
         {
             Destroy(gameObject);
         }

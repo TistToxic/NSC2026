@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    Vector3 targetPos;
-    void Start()
-    {
-        
-    }
+    private Vector3 targetPos;
+    [SerializeField] private float range = 100f;
+    [SerializeField] private float damage = 100f;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Plane xyPlane = new Plane(Vector3.forward, new Vector3(0, 0, transform.position.z));
             float enter = 0f;
@@ -20,7 +18,6 @@ public class Gun : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Enemy")))
             {
                 targetPos = hit.point;
-                targetPos.z = transform.position.z;
             }
             else if (xyPlane.Raycast(ray, out enter))
             {
@@ -31,10 +28,14 @@ public class Gun : MonoBehaviour
             Debug.DrawLine(transform.position, targetPos, Color.green, 2f);
 
             Vector3 dir = (targetPos - transform.position).normalized;
-            RaycastHit enemyHit;
-            if (Physics.Raycast(transform.position, dir, out enemyHit, Mathf.Infinity))
+            RaycastHit projHit;
+            if (Physics.Raycast(transform.position, dir, out projHit, range, LayerMask.GetMask("Enemy", "Default")))
             {
-                Debug.Log(enemyHit.collider.gameObject.name);
+                if (projHit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    Health health = projHit.collider.gameObject.GetComponent<Health>();
+                    health.Damage(damage);
+                }
             }
         }
     }
