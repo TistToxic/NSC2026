@@ -79,12 +79,21 @@ public class Inventory : MonoBehaviour
     {
         if (inventory[selectedSlot] != null)
         {
-            Vector3 dir = (Input.mousePosition - transform.position).normalized;
-            Vector3 dropDir = Vector3.Project(dir, Vector3.right);
-            GameObject obj = inventory[selectedSlot];
-            obj.transform.position = transform.position + dropOffset * dropDir;
-            obj.SetActive(true);
-            inventory[selectedSlot] = null;
+            Plane xyPlane = new Plane(Vector3.forward, new Vector3(0, 0, transform.position.z));
+            float enter = 0f;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 mousePos;
+            if (xyPlane.Raycast(ray, out enter))
+            {
+                mousePos = ray.GetPoint(enter);
+                mousePos.z = transform.position.z;
+                Vector3 dir = (mousePos - transform.position).normalized;
+                Vector3 dropDir = Vector3.Project(dir, Vector3.left);
+                GameObject obj = inventory[selectedSlot];
+                obj.transform.position = transform.position + dropOffset * dropDir;
+                obj.SetActive(true);
+                inventory[selectedSlot] = null;
+            }
         }
     }
 
