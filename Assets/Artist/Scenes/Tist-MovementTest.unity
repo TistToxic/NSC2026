@@ -680,6 +680,8 @@ GameObject:
   - component: {fileID: 449290637}
   - component: {fileID: 449290636}
   - component: {fileID: 449290638}
+  - component: {fileID: 449290640}
+  - component: {fileID: 449290639}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -699,8 +701,7 @@ Transform:
   m_LocalPosition: {x: 25.05, y: 2.04, z: -6.4799995}
   m_LocalScale: {x: 0.47319898, y: 0.42711315, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1585209809}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.017, y: -180, z: -0.133}
 --- !u!212 &449290634
@@ -841,7 +842,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6487ffadc98ce2a45ad88bb9dc9e2652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player: {fileID: 1585209809}
+  player: {fileID: 449290633}
+--- !u!114 &449290639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449290632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd73ed3c5767ec479293e8afba04c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gun
+  range: 100
+  damage: 100
+--- !u!114 &449290640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449290632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b5c45f1710f5049a53647b515e910d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  inventoryParent: {fileID: 1591673988}
+  emptySprite: {fileID: 0}
+  dropOffset: 2
 --- !u!1 &481687070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,7 +3313,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!1 &1585209808
+--- !u!1 &1547667827
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3291,60 +3321,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1585209809}
-  - component: {fileID: 1585209810}
-  - component: {fileID: 1585209811}
-  m_Layer: 3
-  m_Name: Player
+  - component: {fileID: 1547667829}
+  - component: {fileID: 1547667828}
+  m_Layer: 0
+  m_Name: SaveLoadManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1585209809
+--- !u!114 &1547667828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547667827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa7f9d73f8eb51409412ea76c18a3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveLoadManager
+  playerTransform: {fileID: 449290633}
+--- !u!4 &1547667829
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585209808}
+  m_GameObject: {fileID: 1547667827}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0011605968, y: 0.99999934, z: 0.0001483047, w: -0.00000017212207}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.113277, y: 2.3412976, z: 0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.92733, y: 2.1764, z: -6.67996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 449290633}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1585209810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585209808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd73ed3c5767ec479293e8afba04c86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  range: 100
-  damage: 25
---- !u!114 &1585209811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585209808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64b5c45f1710f5049a53647b515e910d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  inventoryParent: {fileID: 1591673988}
-  emptySprite: {fileID: 0}
-  dropOffset: 2
 --- !u!1 &1591673988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,3 +4092,4 @@ SceneRoots:
   - {fileID: 1359848991}
   - {fileID: 1176613010}
   - {fileID: 1026262339}
+  - {fileID: 1547667829}
